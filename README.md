@@ -22,7 +22,7 @@ The best example is:
 
     salt = Time.now.to_i.to_s
     secret_key = "secret"
-    iv = (OpenSSL::Cipher::Cipher.new('aes-256-cbc').random_iv
+    iv = (OpenSSL::Cipher.new('aes-256-cbc').random_iv
     encrypted_value = Encryptor.encrypt('some string to encrypt', :key => secret_key, :iv => iv, :salt => salt)
     decrypted_value = Encryptor.decrypt(encrypted_value, :key => secret_key, :iv => iv, :salt => salt)
 
